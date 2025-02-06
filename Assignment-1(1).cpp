@@ -1,19 +1,23 @@
-/*Write a c++ program to print fibonacci series without using recursion.
-Input: 10
-Output: 0 1 1 2 3 5 8 13 21 34*/
+//Program to find Fibonacci series using "DO_WHILE" loop.
+//Make it interactive for user using 'n' as Number of terms.
 
 #include<iostream>
 using namespace std;
 int main(){
-	int a = 0, i , first = 0, second = 1, till;
-	cout << "Enter till which the series needs to be continued" << endl;
-	cin >> till;
+	int n, first = 0, second = 1, next,c;
+	cout << "Enter number of terms:\n";
+	cin >> n;
+	cout << "The Fibonacci series:\n";
 	cout << first << " " << second << " ";
-	for(i = 2; i<till; ++i){
-		a = first;
+	c = 2;
+	do{ 
+		next = first + second;
+		cout << next << "    ";
 		first = second;
-		second = a + second; 
-		cout << second << " ";
-	}
+		second = next; 
+		c++;
+	}while( c <= n);
+	       
+		cout <<"\n";
 	return 0;
 }
